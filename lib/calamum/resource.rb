@@ -3,7 +3,7 @@
 # So anywhere in view template we can use this object.
 class Calamum::Resource
   attr_accessor :uri, :action, :headers,
-    :auth, :params, :errors, :description, :response, :tryit
+    :auth, :params, :errors, :description, :response, :tryit, :raw
 
   # Initialize object from attributes.
   #
@@ -18,6 +18,7 @@ class Calamum::Resource
     @description = attrs['description']
     @response = attrs['response']
     @tryit = attrs['tryit']
+    @raw = attrs['raw']
   end
 
   # Returns a unique, but readable name for this resource suitable for use as a filename

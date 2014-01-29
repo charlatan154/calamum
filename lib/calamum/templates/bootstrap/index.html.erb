@@ -69,6 +69,7 @@
 	  <li class="active"><a href="#description_<%= req.slug %>"  data-toggle="tab">Description</a></li>
 	  <li><a href="#header_<%= req.slug %>" data-toggle="tab">Header</a></li>
 	  <li><a href="#params_<%= req.slug %>" data-toggle="tab">Parameters</a></li>
+	  <li><a href="#raw_<%= req.slug %>" data-toggle="tab">Raw</a></li>
 	  <li><a href="#response_<%= req.slug %>" data-toggle="tab">Response</a></li>
 	</ul>
         <div class="tab-content">
@@ -121,6 +122,11 @@
 	      Request without parametres
 	   <% end %>
 	 </div>
+	  <div class="tab-pane content" id="raw_<%= req.slug %>">
+		<% if req.raw %>
+	  	 <pre class="prettyprint"><%= pj req.raw %></pre>
+		 <% end%>
+	   </div>
 	   <div class="tab-pane content" id="response_<%= req.slug %>">
 		<% if req.response %>
 	  	 <pre class="prettyprint"><%= pj req.response %></pre>
